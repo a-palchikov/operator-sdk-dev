@@ -158,7 +158,7 @@ func ScaffoldChart(chrt *chart.Chart, projectDir string) (*chart.Chart, string, 
 	chartsPath := filepath.Join(projectDir, HelmChartsDir)
 
 	// Save it into our project's helm-charts directory.
-	if err := chartutil.SaveDir(chrt, chartsPath); err != nil {
+	if err := chartutil.SaveDirWithOptions(chrt, chartsPath, false); err != nil {
 		return chrt, "", err
 	}
 
